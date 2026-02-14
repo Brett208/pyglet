@@ -104,17 +104,10 @@ from pyglet.math import Mat4
 from pyglet.window import event, key
 
 if TYPE_CHECKING:
+    import BaseWindow as Window
     from pyglet.display.base import Display, Screen, ScreenMode
     from pyglet.gl import DisplayConfig, Config, Context
     from pyglet.text import Label
-    if pyglet.options['headless']:
-        from pyglet.window.headless import HeadlessWindow as Window
-    elif pyglet.compat_platform == 'darwin':
-        from pyglet.window.cocoa import CocoaWindow as Window
-    elif pyglet.compat_platform in ('win32', 'cygwin'):
-        from pyglet.window.win32 import Win32Window as Window
-    else:
-        from pyglet.window.xlib import XlibWindow as Window
 
 _is_pyglet_doc_run = hasattr(sys, 'is_pyglet_doc_run') and sys.is_pyglet_doc_run
 
